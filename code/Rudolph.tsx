@@ -1,5 +1,7 @@
 import { Data, animate, Override, Animatable } from 'framer'
 
+import { nose, nose2 } from './datas'
+
 // Utils
 var lock01 = false
 function sleep(ms) {
@@ -9,38 +11,7 @@ function sleep(ms) {
 // Animations
 
 const data = Data({
-  noseWrapTop: Animatable(231),
-  noseWrapLeft: Animatable(123),
-  noseWrapOpacity: Animatable(1),
-
-  noseScale: Animatable(1),
-  noseTop: Animatable(0),
-  noseRadius: Animatable('100px'),
-  noseWidth: Animatable(130),
-  noseHeight: Animatable(125),
-  noseBoxShadow: [
-    {
-      inset: false,
-      color: 'rgba(0, 0, 0, 0.25)',
-      x: 0,
-      y: 0,
-      blur: 0,
-      spread: 0,
-    },
-  ],
-  noseBackground: Animatable('#DD3137'),
-
   titleTop: Animatable(0),
-
-  textsTitleOpacity: Animatable(0),
-  textsTitleLeft: Animatable(0),
-  textsTitleScale: Animatable(1),
-
-  textsOpacity: Animatable(0),
-  textsLeft: Animatable(0),
-
-  nextBtnScale: Animatable(1),
-  nextBtnOpacity: Animatable(0),
 
   spark01Opacity: Animatable(0),
   spark01Top: Animatable(0),
@@ -61,36 +32,6 @@ const data = Data({
   hatOpacity: Animatable(0),
   hatTop: Animatable(-100),
   hatScaleY: Animatable(1),
-
-  // nose2
-  nose2Opacity: Animatable(0.2),
-  nose2Scale: Animatable(1),
-  nose2Top: Animatable(0),
-  nose2Left: Animatable(-111),
-  nose2Radius: Animatable('100px'),
-  nose2Width: Animatable(130),
-  nose2Height: Animatable(125),
-  nose2BoxShadow: [
-    {
-      inset: false,
-      color: 'rgba(0, 0, 0, 0.25)',
-      x: 0,
-      y: 0,
-      blur: 0,
-      spread: 0,
-    },
-  ],
-  nose2Background: Animatable('#DD3137'),
-
-  texts2TitleOpacity: Animatable(0),
-  texts2TitleLeft: Animatable(0),
-  texts2TitleScale: Animatable(1),
-
-  texts2Opacity: Animatable(0),
-  texts2Left: Animatable(0),
-
-  nextBtn2Scale: Animatable(1),
-  nextBtn2Opacity: Animatable(0),
 })
 
 export const Title: Override = () => {
@@ -101,16 +42,16 @@ export const Title: Override = () => {
 
 export const TextsTitle: Override = () => {
   return {
-    opacity: data.textsTitleOpacity,
-    left: data.textsTitleLeft,
-    scale: data.textsTitleScale,
+    opacity: nose.textsTitleOpacity,
+    left: nose.textsTitleLeft,
+    scale: nose.textsTitleScale,
   }
 }
 
 export const Texts: Override = () => {
   return {
-    opacity: data.textsOpacity,
-    left: data.textsLeft,
+    opacity: nose.textsOpacity,
+    left: nose.textsLeft,
   }
 }
 
@@ -153,21 +94,21 @@ export const Hat: Override = () => {
 
 export const NoseWrap: Override = () => {
   return {
-    top: data.noseWrapTop,
-    left: data.noseWrapLeft,
-    opacity: data.noseWrapOpacity,
+    top: nose.wrapTop,
+    left: nose.wrapLeft,
+    opacity: nose.wrapOpacity,
   }
 }
 
 export const Nose: Override = () => {
   return {
-    scale: data.noseScale,
-    top: data.noseTop,
-    radius: data.noseRadius,
-    width: data.noseWidth,
-    height: data.noseHeight,
-    shadows: data.noseBoxShadow,
-    background: data.noseBackground,
+    scale: nose.scale,
+    top: nose.top,
+    radius: nose.radius,
+    width: nose.width,
+    height: nose.height,
+    shadows: nose.shadow,
+    background: nose.background,
 
     style: {
       transition: 'border-radius 1.2s ease-in-out, box-shadow 1s ease-out',
@@ -176,8 +117,8 @@ export const Nose: Override = () => {
     async onTap() {
       // nose shirink
       if (!lock01) {
-        data.noseScale.set(0.6)
-        animate.spring(data.noseScale, 1)
+        nose.scale.set(0.6)
+        animate.spring(nose.scale, 1)
         lock01 = true
       }
 
@@ -187,7 +128,7 @@ export const Nose: Override = () => {
       animate.easeIn(data.titleTop, -300)
 
       // animate nose
-      animate.easeOut(data.noseBoxShadow, [
+      animate.easeOut(nose.shadow, [
         {
           inset: false,
           color: 'rgba(0, 0, 0, 0.25)',
@@ -199,17 +140,17 @@ export const Nose: Override = () => {
       ])
 
       await sleep(1000)
-      animate.easeOut(data.noseTop, -50)
+      animate.easeOut(nose.top, -50)
 
       await sleep(700)
 
-      animate.easeInOut(data.noseRadius, '20px')
+      animate.easeInOut(nose.radius, '20px')
 
       await sleep(700)
 
-      animate.easeInOut(data.noseWidth, 350)
-      animate.easeInOut(data.noseHeight, 350)
-      animate.easeInOut(data.noseBackground, 'white')
+      animate.easeInOut(nose.width, 350)
+      animate.easeInOut(nose.height, 350)
+      animate.easeInOut(nose.background, 'white')
 
       await sleep(750)
 
@@ -260,17 +201,17 @@ export const Nose: Override = () => {
 
       // data.textsTitleScale.set(0.6)
       // animate.spring(data.textsTitleScale, 1)
-      animate.easeInOut(data.textsTitleOpacity, 0.99)
-      animate.ease(data.textsTitleLeft, 30)
+      animate.easeInOut(nose.textsTitleOpacity, 0.99)
+      animate.ease(nose.textsTitleLeft, 30)
 
-      animate.easeInOut(data.textsOpacity, 0.99)
-      animate.spring(data.textsLeft, 30, {
+      animate.easeInOut(nose.textsOpacity, 0.99)
+      animate.spring(nose.textsLeft, 30, {
         tension: 80,
         friction: 40,
       })
 
       // animate next button
-      animate.easeInOut(data.nextBtnOpacity, 0.99)
+      animate.easeInOut(nose.nextBtnOpacity, 0.99)
 
       await sleep(1500)
 
@@ -300,15 +241,15 @@ export const Nose: Override = () => {
 
 export const Nose2: Override = () => {
   return {
-    opacity: data.nose2Opacity,
-    scale: data.nose2Scale,
-    top: data.nose2Top,
-    left: data.nose2Left,
-    radius: data.nose2Radius,
-    width: data.nose2Width,
-    height: data.nose2Height,
-    shadows: data.nose2BoxShadow,
-    background: data.nose2Background,
+    opacity: nose2.opacity,
+    scale: nose2.scale,
+    top: nose2.top,
+    left: nose2.left,
+    radius: nose2.radius,
+    width: nose2.width,
+    height: nose2.height,
+    shadows: nose2.shadow,
+    background: nose2.background,
 
     style: {
       transition: 'border-radius 1.2s ease-in-out, box-shadow 2s ease-out',
@@ -317,35 +258,35 @@ export const Nose2: Override = () => {
 }
 export const Texts2Title: Override = () => {
   return {
-    opacity: data.texts2TitleOpacity,
-    left: data.texts2TitleLeft,
-    scale: data.texts2TitleScale,
+    opacity: nose2.texts2TitleOpacity,
+    left: nose2.texts2TitleLeft,
+    scale: nose2.texts2TitleScale,
   }
 }
 
 export const Texts2: Override = () => {
   return {
-    opacity: data.texts2Opacity,
-    left: data.texts2Left,
+    opacity: nose2.texts2Opacity,
+    left: nose2.texts2Left,
   }
 }
 
 export const NextButton: Override = () => {
   return {
-    scale: data.nextBtnScale,
-    opacity: data.nextBtnOpacity,
+    scale: nose.nextBtnScale,
+    opacity: nose.nextBtnOpacity,
     async onTap() {
-      data.nextBtnScale.set(0.6)
-      animate.spring(data.nextBtnScale, 1)
+      nose.nextBtnScale.set(0.6)
+      animate.spring(nose.nextBtnScale, 1)
       await sleep(200)
 
-      animate.ease(data.noseScale, 0.8)
-      animate.ease(data.noseWrapLeft, 0)
-      animate.ease(data.noseWrapTop, 230)
-      animate.ease(data.noseWrapOpacity, 0.3)
+      animate.ease(nose.scale, 0.8)
+      animate.ease(nose.wrapLeft, 0)
+      animate.ease(nose.wrapTop, 230)
+      animate.ease(nose.wrapOpacity, 0.3)
 
       // nose2 in
-      animate.easeOut(data.nose2BoxShadow, [
+      animate.easeOut(nose2.shadow, [
         {
           inset: false,
           color: 'rgba(0, 0, 0, 0.25)',
@@ -358,34 +299,34 @@ export const NextButton: Override = () => {
 
       await sleep(250)
 
-      animate.ease(data.nose2Opacity, 0.99)
-      animate.ease(data.nose2Left, -350)
+      animate.ease(nose2.opacity, 0.99)
+      animate.ease(nose2.left, -350)
 
-      animate.easeInOut(data.nose2Radius, '20px')
+      animate.easeInOut(nose2.radius, '20px')
 
-      animate.easeInOut(data.nose2Width, 350)
-      animate.easeInOut(data.nose2Height, 350)
-      animate.easeInOut(data.nose2Background, 'white')
+      animate.easeInOut(nose2.width, 350)
+      animate.easeInOut(nose2.height, 350)
+      animate.easeInOut(nose2.background, 'white')
 
       await sleep(1000)
 
-      animate.easeInOut(data.texts2TitleOpacity, 0.99)
-      animate.ease(data.texts2TitleLeft, 30)
+      animate.easeInOut(nose2.texts2TitleOpacity, 0.99)
+      animate.ease(nose2.texts2TitleLeft, 30)
 
-      animate.easeInOut(data.texts2Opacity, 0.99)
-      animate.spring(data.texts2Left, 30, {
+      animate.easeInOut(nose2.texts2Opacity, 0.99)
+      animate.spring(nose2.texts2Left, 30, {
         tension: 80,
         friction: 40,
       })
 
-      animate.easeInOut(data.nextBtn2Opacity, 0.99)
+      animate.easeInOut(nose2.nextBtn2Opacity, 0.99)
     },
   }
 }
 
 export const NextButton2: Override = () => {
   return {
-    scale: data.nextBtn2Scale,
-    opacity: data.nextBtn2Opacity,
+    scale: nose2.nextBtn2Scale,
+    opacity: nose2.nextBtn2Opacity,
   }
 }
