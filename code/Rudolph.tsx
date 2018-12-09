@@ -1,15 +1,9 @@
-import { Data, animate, Override, Animatable } from 'framer'
+import { Data, Override, Animatable } from 'framer'
 
 import { nose, nose2 } from './datas'
+import { showNose1, showNose2 } from './animate'
 
-// Utils
-var lock01 = false
-function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-// Animations
-
+// Animation Objects
 const data = Data({
   titleTop: Animatable(0),
 
@@ -109,133 +103,10 @@ export const Nose: Override = () => {
     height: nose.height,
     shadows: nose.shadow,
     background: nose.background,
-
     style: {
       transition: 'border-radius 1.2s ease-in-out, box-shadow 1s ease-out',
     },
-
-    async onTap() {
-      // nose shirink
-      if (!lock01) {
-        nose.scale.set(0.6)
-        animate.spring(nose.scale, 1)
-        lock01 = true
-      }
-
-      await sleep(100)
-
-      // animate title
-      animate.easeIn(data.titleTop, -300)
-
-      // animate nose
-      animate.easeOut(nose.shadow, [
-        {
-          inset: false,
-          color: 'rgba(0, 0, 0, 0.25)',
-          x: 5,
-          y: 30,
-          blur: 20,
-          spread: 0,
-        },
-      ])
-
-      await sleep(1000)
-      animate.easeOut(nose.top, -50)
-
-      await sleep(700)
-
-      animate.easeInOut(nose.radius, '20px')
-
-      await sleep(700)
-
-      animate.easeInOut(nose.width, 350)
-      animate.easeInOut(nose.height, 350)
-      animate.easeInOut(nose.background, 'white')
-
-      await sleep(750)
-
-      // animate sparks
-      animate.easeInOut(data.spark01Opacity, 0.99, {
-        duration: 0.2,
-      })
-      animate.easeOut(data.spark01Top, 130, {
-        duration: 0.3,
-      })
-      animate.easeOut(data.spark01Right, 80, {
-        duration: 0.3,
-      })
-
-      animate.easeInOut(data.spark02Opacity, 0.99, {
-        duration: 0.3,
-      })
-      animate.easeOut(data.spark02Top, 100, {
-        duration: 0.25,
-      })
-      animate.easeOut(data.spark02Right, 15, {
-        duration: 0.3,
-      })
-
-      animate.easeInOut(data.spark03Opacity, 0.99, {
-        duration: 0.3,
-      })
-      animate.easeOut(data.spark03Top, 120, {
-        duration: 0.3,
-      })
-      animate.easeOut(data.spark03Left, 80, {
-        duration: 0.3,
-      })
-
-      animate.easeInOut(data.spark04Opacity, 0.99, {
-        duration: 0.3,
-      })
-      animate.easeOut(data.spark04Top, 160, {
-        duration: 0.3,
-      })
-      animate.easeOut(data.spark04Right, 10, {
-        duration: 0.3,
-      })
-
-      await sleep(200)
-
-      // animate texts
-
-      // data.textsTitleScale.set(0.6)
-      // animate.spring(data.textsTitleScale, 1)
-      animate.easeInOut(nose.textsTitleOpacity, 0.99)
-      animate.ease(nose.textsTitleLeft, 30)
-
-      animate.easeInOut(nose.textsOpacity, 0.99)
-      animate.spring(nose.textsLeft, 30, {
-        tension: 80,
-        friction: 40,
-      })
-
-      // animate next button
-      animate.easeInOut(nose.nextBtnOpacity, 0.99)
-
-      await sleep(1500)
-
-      // animate hat
-      // animate.easeInOut(data.hatOpacity, 0.99)
-
-      // animate.easeIn(data.hatTop, 5, {
-      //   duration: 1,
-      // })
-      // await sleep(800)
-      // animate.easeOut(data.hatScaleY, 0.9, {
-      //   duration: 0.2,
-      // })
-
-      // await sleep(300)
-
-      // animate.easeIn(data.hatScaleY, 1, {
-      //   duration: 0.2,
-      // })
-
-      // animate.easeOut(data.hatTop, 10, {
-      //   duration: 0.2,
-      // })
-    },
+    onTap: showNose1,
   }
 }
 
@@ -275,52 +146,7 @@ export const NextButton: Override = () => {
   return {
     scale: nose.nextBtnScale,
     opacity: nose.nextBtnOpacity,
-    async onTap() {
-      nose.nextBtnScale.set(0.6)
-      animate.spring(nose.nextBtnScale, 1)
-      await sleep(200)
-
-      animate.ease(nose.scale, 0.8)
-      animate.ease(nose.wrapLeft, 0)
-      animate.ease(nose.wrapTop, 230)
-      animate.ease(nose.wrapOpacity, 0.3)
-
-      // nose2 in
-      animate.easeOut(nose2.shadow, [
-        {
-          inset: false,
-          color: 'rgba(0, 0, 0, 0.25)',
-          x: 5,
-          y: 30,
-          blur: 20,
-          spread: 5,
-        },
-      ])
-
-      await sleep(250)
-
-      animate.ease(nose2.opacity, 0.99)
-      animate.ease(nose2.left, -350)
-
-      animate.easeInOut(nose2.radius, '20px')
-
-      animate.easeInOut(nose2.width, 350)
-      animate.easeInOut(nose2.height, 350)
-      animate.easeInOut(nose2.background, 'white')
-
-      await sleep(1000)
-
-      animate.easeInOut(nose2.texts2TitleOpacity, 0.99)
-      animate.ease(nose2.texts2TitleLeft, 30)
-
-      animate.easeInOut(nose2.texts2Opacity, 0.99)
-      animate.spring(nose2.texts2Left, 30, {
-        tension: 80,
-        friction: 40,
-      })
-
-      animate.easeInOut(nose2.nextBtn2Opacity, 0.99)
-    },
+    onTap: showNose2,
   }
 }
 
