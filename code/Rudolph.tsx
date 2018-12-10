@@ -5,8 +5,6 @@ import { showNose1, showNose2 } from './animate'
 
 // Animation Objects
 const data = Data({
-  titleTop: Animatable(0),
-
   spark01Opacity: Animatable(0),
   spark01Top: Animatable(0),
   spark01Right: Animatable(0),
@@ -27,12 +25,6 @@ const data = Data({
   hatTop: Animatable(-100),
   hatScaleY: Animatable(1),
 })
-
-export const Title: Override = () => {
-  return {
-    top: data.titleTop,
-  }
-}
 
 export const TextsTitle: Override = () => {
   return {

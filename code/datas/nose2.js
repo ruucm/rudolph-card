@@ -1,13 +1,13 @@
 import { Animatable } from 'framer'
 
 // nose2
-const opacity = Animatable(0.2)
+const opacity = Animatable(0)
 const scale = Animatable(1)
 const top = Animatable(0)
 const left = Animatable(-111)
 const radius = Animatable('100px')
 const width = Animatable(130)
-const height = Animatable(125)
+const height = Animatable(120)
 const shadow = [
   {
     inset: false,

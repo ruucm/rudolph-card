@@ -9,7 +9,7 @@ const scale = Animatable(1)
 const top = Animatable(0)
 const radius = Animatable('100px')
 const width = Animatable(130)
-const height = Animatable(125)
+const height = Animatable(120)
 const shadow = [
   {
     inset: false,
