@@ -1,6 +1,6 @@
 import { Animatable } from 'framer'
 
-// nose2
+// nose3
 const opacity = Animatable(0)
 const scale = Animatable(1)
 const top = Animatable(0)

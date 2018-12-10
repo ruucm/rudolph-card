@@ -38,16 +38,16 @@ const showNose2 = async () => {
 
   await sleep(1000)
 
-  animate.easeInOut(nose2.texts2TitleOpacity, 0.99)
-  animate.ease(nose2.texts2TitleLeft, 30)
+  animate.easeInOut(nose2.textsTitleOpacity, 0.99)
+  animate.ease(nose2.textsTitleLeft, 30)
 
-  animate.easeInOut(nose2.texts2Opacity, 0.99)
-  animate.spring(nose2.texts2Left, 30, {
+  animate.easeInOut(nose2.textsDescOpacity, 0.99)
+  animate.spring(nose2.textsDescLeft, 30, {
     tension: 80,
     friction: 40,
   })
 
-  animate.easeInOut(nose2.nextBtn2Opacity, 0.99)
+  animate.easeInOut(nose2.nextBtnOpacity, 0.99)
 }
 
 export default showNose2

@@ -121,16 +121,16 @@ export const Nose2: Override = () => {
 }
 export const Texts2Title: Override = () => {
   return {
-    opacity: nose2.texts2TitleOpacity,
-    left: nose2.texts2TitleLeft,
-    scale: nose2.texts2TitleScale,
+    opacity: nose2.textsTitleOpacity,
+    left: nose2.textsTitleLeft,
+    scale: nose2.textsTitleScale,
   }
 }
 
 export const Texts2: Override = () => {
   return {
-    opacity: nose2.texts2Opacity,
-    left: nose2.texts2Left,
+    opacity: nose2.textsDescOpacity,
+    left: nose2.textsDescLeft,
   }
 }
 
@@ -144,7 +144,7 @@ export const NextButton: Override = () => {
 
 export const NextButton2: Override = () => {
   return {
-    scale: nose2.nextBtn2Scale,
-    opacity: nose2.nextBtn2Opacity,
+    scale: nose2.nextBtnScale,
+    opacity: nose2.nextBtnOpacity,
   }
 }
