@@ -1,7 +1,7 @@
 import { Data, Override, Animatable } from 'framer'
 
 import { nose, nose2, nose3 } from './datas'
-import { showNose1, showNose2, showNose3 } from './animate'
+import { showNose1, showNose2, showNose3, showSnow } from './animate'
 
 // Animation Objects
 const data = Data({
@@ -78,6 +78,7 @@ export const Hat: Override = () => {
   }
 }
 
+// nose
 export const NoseWrap: Override = () => {
   return {
     top: nose.wrapTop,
@@ -101,9 +102,17 @@ export const Nose: Override = () => {
     onTap: showNose1,
   }
 }
+export const NextButton: Override = () => {
+  return {
+    scale: nose.nextBtnScale,
+    opacity: nose.nextBtnOpacity,
+    background: nose.nextBtnBackground,
+    onTap: showNose2,
+    // onTap: showSnow,
+  }
+}
 
 // nose2
-
 export const NoseWrap2: Override = () => {
   return {
     top: nose2.wrapTop,
@@ -145,13 +154,6 @@ export const Texts2: Override = () => {
   }
 }
 
-export const NextButton: Override = () => {
-  return {
-    scale: nose.nextBtnScale,
-    opacity: nose.nextBtnOpacity,
-    onTap: showNose2,
-  }
-}
 export const NextButton2: Override = () => {
   return {
     scale: nose2.nextBtnScale,
@@ -183,6 +185,8 @@ export const NextButton3: Override = () => {
   return {
     scale: nose3.nextBtnScale,
     opacity: nose3.nextBtnOpacity,
+    background: nose3.nextBtnBackground,
+    onTap: showSnow,
   }
 }
 

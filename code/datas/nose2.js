@@ -6,7 +6,7 @@ const wrapLeft = Animatable(363)
 const wrapOpacity = Animatable(1)
 
 // nose2
-const opacity = Animatable(0.2)
+const opacity = Animatable(0)
 const scale = Animatable(1)
 const top = Animatable(0)
 const left = Animatable(-111)

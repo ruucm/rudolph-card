@@ -34,6 +34,7 @@ const textsDescLeft = Animatable(0)
 
 const nextBtnScale = Animatable(1)
 const nextBtnOpacity = Animatable(0)
+const nextBtnBackground = Animatable('#DD3137')
 
 export default {
   wrapTop,
@@ -55,4 +56,5 @@ export default {
   textsDescLeft,
   nextBtnScale,
   nextBtnOpacity,
+  nextBtnBackground,
 }
