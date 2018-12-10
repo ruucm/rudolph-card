@@ -1,7 +1,7 @@
 import { Data, Override, Animatable } from 'framer'
 
-import { nose, nose2 } from './datas'
-import { showNose1, showNose2 } from './animate'
+import { nose, nose2, nose3 } from './datas'
+import { showNose1, showNose2, showNose3 } from './animate'
 
 // Animation Objects
 const data = Data({
@@ -102,6 +102,16 @@ export const Nose: Override = () => {
   }
 }
 
+// nose2
+
+export const NoseWrap2: Override = () => {
+  return {
+    top: nose2.wrapTop,
+    left: nose2.wrapLeft,
+    opacity: nose2.wrapOpacity,
+  }
+}
+
 export const Nose2: Override = () => {
   return {
     opacity: nose2.opacity,
@@ -119,6 +129,7 @@ export const Nose2: Override = () => {
     },
   }
 }
+
 export const Texts2Title: Override = () => {
   return {
     opacity: nose2.textsTitleOpacity,
@@ -141,10 +152,51 @@ export const NextButton: Override = () => {
     onTap: showNose2,
   }
 }
-
 export const NextButton2: Override = () => {
   return {
     scale: nose2.nextBtnScale,
     opacity: nose2.nextBtnOpacity,
+    onTap: showNose3,
+  }
+}
+
+// nose3
+export const Nose3: Override = () => {
+  return {
+    opacity: nose3.opacity,
+    scale: nose3.scale,
+    top: nose3.top,
+    left: nose3.left,
+    radius: nose3.radius,
+    width: nose3.width,
+    height: nose3.height,
+    shadows: nose3.shadow,
+    background: nose3.background,
+
+    style: {
+      transition: 'border-radius 1.2s ease-in-out, box-shadow 2s ease-out',
+    },
+  }
+}
+
+export const NextButton3: Override = () => {
+  return {
+    scale: nose3.nextBtnScale,
+    opacity: nose3.nextBtnOpacity,
+  }
+}
+
+export const Texts3Title: Override = () => {
+  return {
+    opacity: nose3.textsTitleOpacity,
+    left: nose3.textsTitleLeft,
+    scale: nose3.textsTitleScale,
+  }
+}
+
+export const Texts3: Override = () => {
+  return {
+    opacity: nose3.textsDescOpacity,
+    left: nose3.textsDescLeft,
   }
 }

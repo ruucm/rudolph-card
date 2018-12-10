@@ -1,7 +1,12 @@
 import { Animatable } from 'framer'
 
+// nose2 wrap
+const wrapTop = Animatable(181)
+const wrapLeft = Animatable(363)
+const wrapOpacity = Animatable(1)
+
 // nose2
-const opacity = Animatable(0)
+const opacity = Animatable(0.2)
 const scale = Animatable(1)
 const top = Animatable(0)
 const left = Animatable(-111)
@@ -31,6 +36,9 @@ const nextBtnScale = Animatable(1)
 const nextBtnOpacity = Animatable(0)
 
 export default {
+  wrapTop,
+  wrapLeft,
+  wrapOpacity,
   opacity,
   scale,
   top,
