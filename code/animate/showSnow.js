@@ -1,6 +1,6 @@
 import { animate } from 'framer'
 
-import { nose, nose2, nose3 } from '../datas'
+import { nose, nose2, nose3, thanks } from '../datas'
 import { sleep } from '../utils'
 
 const showSnow = async () => {
@@ -13,6 +13,11 @@ const showSnow = async () => {
   await sleep(200)
   animate.ease(nose3.nextBtnOpacity, 1)
   animate.ease(nose3.nextBtnBackground, '#004ED8')
+
+  await sleep(1000)
+
+  animate.ease(thanks.top, 0)
+  animate.ease(thanks.opacity, 1)
 }
 
 export default showSnow

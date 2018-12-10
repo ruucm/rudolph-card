@@ -1,6 +1,6 @@
 import { Data, Override, Animatable } from 'framer'
 
-import { nose, nose2, nose3 } from './datas'
+import { nose, nose2, nose3, thanks } from './datas'
 import { showNose1, showNose2, showNose3, showSnow } from './animate'
 
 // Animation Objects
@@ -202,5 +202,14 @@ export const Texts3: Override = () => {
   return {
     opacity: nose3.textsDescOpacity,
     left: nose3.textsDescLeft,
+  }
+}
+
+// thanks
+export const Thanks: Override = () => {
+  return {
+    opacity: thanks.opacity,
+    top: thanks.top,
+    left: thanks.left,
   }
 }
