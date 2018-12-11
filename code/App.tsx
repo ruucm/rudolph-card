@@ -1,5 +1,5 @@
 import { Data, animate, Override, Animatable } from 'framer'
-import { nose1, nose2, nose3, thanks, pages } from './datas'
+import { nose1, nose2, nose3, thanks } from './datas'
 import {
   showNose1,
   showNose2,
