@@ -125,3 +125,55 @@ export const Author02: Override = () => {
     left: nose2.textsLeft,
   }
 }
+
+// nose3
+export const NoseWrap03: Override = () => {
+  return {
+    top: nose3.wrapTop,
+    left: nose3.wrapLeft,
+    opacity: nose3.wrapOpacity,
+  }
+}
+
+export const Nose03: Override = () => {
+  return {
+    scale: nose3.scale,
+    top: nose3.top,
+    radius: nose3.radius,
+    width: nose3.width,
+    height: nose3.height,
+    shadows: nose3.shadow,
+    blur: nose3.blur,
+    background: nose3.background,
+    style: {
+      transition: 'border-radius 1.2s ease-in-out, box-shadow 1s ease-out',
+    },
+    onTap: showNose1,
+  }
+}
+
+export const CoverImage03: Override = () => {
+  return {
+    opacity: nose3.coverImgOpacity,
+  }
+}
+
+export const TitleOverlay03: Override = () => {
+  return {
+    top: nose3.titleOverlayTop,
+  }
+}
+export const Title03: Override = () => {
+  return {
+    opacity: nose3.textsTitleOpacity,
+    left: nose3.textsTitleLeft,
+    scale: nose3.textsTitleScale,
+  }
+}
+
+export const Author03: Override = () => {
+  return {
+    opacity: nose3.textsOpacity,
+    left: nose3.textsLeft,
+  }
+}

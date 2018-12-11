@@ -1,18 +1,16 @@
 import { Animatable } from 'framer'
 
-// nose3 wrap
-const wrapTop = Animatable(181)
-const wrapLeft = Animatable(363)
+const wrapTop = Animatable(356)
+
+// const wrapLeft = Animatable(138)
+const wrapLeft = Animatable(0)
 const wrapOpacity = Animatable(1)
 
-// nose3
-const opacity = Animatable(0)
 const scale = Animatable(1)
 const top = Animatable(0)
-const left = Animatable(-111)
 const radius = Animatable('100px')
-const width = Animatable(130)
-const height = Animatable(120)
+const width = Animatable(100)
+const height = Animatable(100)
 const shadow = [
   {
     inset: false,
@@ -23,38 +21,47 @@ const shadow = [
     spread: 0,
   },
 ]
+const blur = 0
 const background = Animatable('#DD3137')
 
-const textsTitleOpacity = Animatable(0)
-const textsTitleLeft = Animatable(0)
-const textsTitleScale = Animatable(1)
+const noseImgOpacity = Animatable(1)
 
-const textsDescOpacity = Animatable(0)
-const textsDescLeft = Animatable(0)
+const coverImgTop = Animatable(-400)
+const coverImgOpacity = Animatable(0)
 
-const nextBtnScale = Animatable(1)
-const nextBtnOpacity = Animatable(0)
-const nextBtnBackground = Animatable('#DD3137')
+const overlayOpacity = Animatable(0)
+
+const trackNumTop = Animatable(0)
+const trackNumOpacity = Animatable(0)
+
+const titleOverlayTop = Animatable(0)
+const titleTop = Animatable(0)
+const titleOpacity = Animatable(0)
+
+const authorTop = Animatable(0)
+const authorOpacity = Animatable(0)
 
 export default {
   wrapTop,
   wrapLeft,
   wrapOpacity,
-  opacity,
   scale,
   top,
-  left,
   radius,
   width,
   height,
   shadow,
+  blur,
   background,
-  textsTitleOpacity,
-  textsTitleLeft,
-  textsTitleScale,
-  textsDescOpacity,
-  textsDescLeft,
-  nextBtnScale,
-  nextBtnOpacity,
-  nextBtnBackground,
+  noseImgOpacity,
+  coverImgTop,
+  coverImgOpacity,
+  overlayOpacity,
+  trackNumTop,
+  trackNumOpacity,
+  titleOverlayTop,
+  titleTop,
+  titleOpacity,
+  authorTop,
+  authorOpacity,
 }
