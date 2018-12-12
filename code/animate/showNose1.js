@@ -1,6 +1,6 @@
 import { animate } from 'framer'
 
-import { nose1 } from '../datas'
+import { nose1, snow } from '../datas'
 import { sleep } from '../utils'
 
 var lock01 = false
@@ -61,6 +61,9 @@ const showNose1 = async () => {
   // animate title
   await sleep(800)
   animate.ease(nose1.titleOverlayTop, -54, { duration: 0.6 })
+
+  // start snow!
+  snow.snowOn = true
 }
 
 export default showNose1

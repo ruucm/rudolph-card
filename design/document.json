@@ -29,6 +29,191 @@
         "centerAnchorY" : 0,
         "children" : [
           {
+            "__class" : "FrameNode",
+            "aspectRatio" : 0.46182266009852219,
+            "blendingEnabled" : 0,
+            "blendingMode" : "normal",
+            "blur" : 12,
+            "blurEnabled" : 0,
+            "blurType" : "layer",
+            "borderBottom" : 1,
+            "borderColor" : "#222",
+            "borderEnabled" : 0,
+            "borderLeft" : 1,
+            "borderPerSide" : false,
+            "borderRight" : 1,
+            "borderStyle" : "solid",
+            "borderTop" : 1,
+            "borderWidth" : 1,
+            "bottom" : null,
+            "boxShadows" : [
+
+            ],
+            "brightness" : 100,
+            "brightnessEnabled" : 0,
+            "centerAnchorX" : 0.5,
+            "centerAnchorY" : 0.5,
+            "children" : [
+
+            ],
+            "clip" : false,
+            "codeOverrideEnabled" : false,
+            "constraintsLocked" : false,
+            "contrast" : 100,
+            "contrastEnabled" : 0,
+            "deviceType" : null,
+            "exportOptions" : [
+
+            ],
+            "fillColor" : "rgba(255,255,255,1)",
+            "fillEnabled" : true,
+            "fillGradient" : {
+              "__class" : "LinearGradient",
+              "alpha" : 1,
+              "angle" : 0,
+              "end" : "rgba(0,0,0,0)",
+              "start" : "black"
+            },
+            "fillImage" : "AsAeeFJ5z6rSrg2RnVjPDm9PuRM.jpg",
+            "fillImagePixelHeight" : 1624,
+            "fillImagePixelWidth" : 750,
+            "fillImageResize" : "fill",
+            "fillType" : "image",
+            "grayscale" : 0,
+            "grayScaleEnabled" : 0,
+            "height" : 812,
+            "heightType" : 0,
+            "hueRotate" : 0,
+            "hueRotateEnabled" : 0,
+            "id" : "NoR8J7_Fq",
+            "intrinsicHeight" : 812,
+            "intrinsicWidth" : 375,
+            "invert" : 0,
+            "invertEnabled" : 0,
+            "isExternalMaster" : null,
+            "isMaster" : false,
+            "isTarget" : false,
+            "left" : 0,
+            "locked" : false,
+            "name" : "back",
+            "navigationTarget" : null,
+            "navigationTransition" : "push",
+            "navigationTransitionBackdropColor" : "rgba(4,4,15,.4)",
+            "navigationTransitionDirection" : "left",
+            "opacity" : 1,
+            "originalid" : null,
+            "parentid" : "pBYtmZRYw",
+            "previewSettings" : null,
+            "radius" : 0,
+            "radiusBottomLeft" : 0,
+            "radiusBottomRight" : 0,
+            "radiusIsRelative" : false,
+            "radiusPerCorner" : false,
+            "radiusTopLeft" : 0,
+            "radiusTopRight" : 0,
+            "replicaInfo" : null,
+            "right" : 0,
+            "rotation" : 0,
+            "saturate" : 100,
+            "saturateEnabled" : 0,
+            "sepia" : 0,
+            "sepiaEnabled" : 0,
+            "top" : 0,
+            "visible" : false,
+            "width" : 375,
+            "widthType" : 0
+          },
+          {
+            "__class" : "CodeComponentNode",
+            "aspectRatio" : null,
+            "blur" : 12,
+            "blurEnabled" : 0,
+            "blurType" : "layer",
+            "borderBottom" : 1,
+            "borderColor" : "#222",
+            "borderEnabled" : 0,
+            "borderLeft" : 1,
+            "borderPerSide" : false,
+            "borderRight" : 1,
+            "borderStyle" : "solid",
+            "borderTop" : 1,
+            "borderWidth" : 1,
+            "bottom" : 0,
+            "boxShadows" : [
+
+            ],
+            "brightness" : 100,
+            "brightnessEnabled" : 0,
+            "centerAnchorX" : 0.5,
+            "centerAnchorY" : 0.5,
+            "children" : [
+
+            ],
+            "clip" : true,
+            "codeComponentIdentifier" : ".\/snow.tsx_snow",
+            "codeComponentProps" : {
+
+            },
+            "codeOverrideEnabled" : true,
+            "codeOverrideFile" : ".\/App.tsx",
+            "codeOverrideIdentifier" : ".\/App.tsx_Snow",
+            "codeOverrideName" : "Snow",
+            "constraintsLocked" : false,
+            "contrast" : 100,
+            "contrastEnabled" : 0,
+            "exportOptions" : [
+
+            ],
+            "fillColor" : "rgba(255,255,255,1)",
+            "fillEnabled" : false,
+            "fillGradient" : {
+              "__class" : "LinearGradient",
+              "alpha" : 1,
+              "angle" : 0,
+              "end" : "rgba(0,0,0,0)",
+              "start" : "black"
+            },
+            "fillImage" : null,
+            "fillImagePixelHeight" : null,
+            "fillImagePixelWidth" : null,
+            "fillImageResize" : "fill",
+            "fillType" : "color",
+            "grayscale" : 0,
+            "grayScaleEnabled" : 0,
+            "height" : 812,
+            "heightType" : 0,
+            "hueRotate" : 0,
+            "hueRotateEnabled" : 0,
+            "id" : "WzIP3aaQh",
+            "intrinsicHeight" : null,
+            "intrinsicWidth" : null,
+            "invert" : 0,
+            "invertEnabled" : 0,
+            "left" : 0,
+            "locked" : false,
+            "name" : null,
+            "opacity" : 1,
+            "originalid" : null,
+            "parentid" : "pBYtmZRYw",
+            "radius" : 0,
+            "radiusBottomLeft" : 0,
+            "radiusBottomRight" : 0,
+            "radiusIsRelative" : false,
+            "radiusPerCorner" : false,
+            "radiusTopLeft" : 0,
+            "radiusTopRight" : 0,
+            "right" : 0,
+            "rotation" : 0,
+            "saturate" : 100,
+            "saturateEnabled" : 0,
+            "sepia" : 0,
+            "sepiaEnabled" : 0,
+            "top" : 0,
+            "visible" : true,
+            "width" : 375,
+            "widthType" : 0
+          },
+          {
             "__class" : "CodeComponentNode",
             "aspectRatio" : null,
             "blur" : 12,
@@ -291,9 +476,9 @@
               "end" : "rgba(0,0,0,0)",
               "start" : "black"
             },
-            "fillImage" : "Wvg8Xv8mW2K0tFJ6p2In4NvU9o.png",
+            "fillImage" : "VfihUDBZISwHqxr6nPVPxXeD1M.png",
             "fillImagePixelHeight" : 36,
-            "fillImagePixelWidth" : 262,
+            "fillImagePixelWidth" : 246,
             "fillImageResize" : "fill",
             "fillType" : "image",
             "grayscale" : 0,
@@ -304,7 +489,7 @@
             "hueRotateEnabled" : 0,
             "id" : "mIw1iraNZ",
             "intrinsicHeight" : 18,
-            "intrinsicWidth" : 131,
+            "intrinsicWidth" : 123,
             "invert" : 0,
             "invertEnabled" : 0,
             "isExternalMaster" : null,
@@ -342,7 +527,7 @@
           }
         ],
         "clip" : true,
-        "codeOverrideEnabled" : false,
+        "codeOverrideEnabled" : true,
         "constraintsLocked" : false,
         "contrast" : 100,
         "contrastEnabled" : 0,
@@ -910,8 +1095,8 @@
                       "data" : {
                         "emptyStyle" : [
                           "FONT:__SF-UI-Display-Black__",
-                          "COLOR:#DD3137",
-                          "SIZE:45"
+                          "SIZE:45",
+                          "COLOR:#DD3137"
                         ]
                       },
                       "depth" : 0,
@@ -927,12 +1112,12 @@
                         {
                           "length" : 8,
                           "offset" : 0,
-                          "style" : "COLOR:#DD3137"
+                          "style" : "SIZE:45"
                         },
                         {
                           "length" : 8,
                           "offset" : 0,
-                          "style" : "SIZE:45"
+                          "style" : "COLOR:#DD3137"
                         }
                       ],
                       "key" : "fdvc4",
@@ -998,7 +1183,7 @@
                 "exportOptions" : [
 
                 ],
-                "fillColor" : "rgba(255,255,255,1)",
+                "fillColor" : "#FFFFFF",
                 "fillEnabled" : true,
                 "fillGradient" : {
                   "__class" : "LinearGradient",
@@ -1066,7 +1251,7 @@
             "exportOptions" : [
 
             ],
-            "fillColor" : "rgba(255,255,255,1)",
+            "fillColor" : "#1E255B",
             "fillEnabled" : false,
             "fillGradient" : {
               "__class" : "LinearGradient",
@@ -2180,7 +2365,7 @@
                 "exportOptions" : [
 
                 ],
-                "fillColor" : "#FFFFFF",
+                "fillColor" : "#FFFFFFE9",
                 "fillEnabled" : true,
                 "fillGradient" : {
                   "__class" : "LinearGradient",

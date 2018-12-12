@@ -15,6 +15,7 @@
 	},
 	"author": ". ruucm",
 	"dependencies": {
-		"@framer/kasimir.iphone-x-kit": "^1.18.0"
+		"@framer/kasimir.iphone-x-kit": "^1.18.0",
+		"styled-components": "^4.1.2"
 	}
 }

@@ -1,5 +1,5 @@
 import { Data, animate, Override, Animatable } from 'framer'
-import { nose1, nose2, nose3, thanks } from './datas'
+import { nose1, nose2, nose3, thanks, snow } from './datas'
 import {
   showNose1,
   showNose2,
@@ -8,9 +8,17 @@ import {
   pageHandle,
 } from './animate'
 
+// pages (framer x lib)
 export const Pages: Override = () => {
   return {
     onChangePage: pageHandle,
+  }
+}
+
+// snow
+export const Snow: Override = () => {
+  return {
+    snowOn: snow.snowOn,
   }
 }
 
