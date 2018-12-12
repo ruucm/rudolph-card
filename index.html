@@ -1,4 +1,42 @@
-(function webpackUniversalModuleDefinition(root, factory) {
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+	<script src="build/react.development.js"></script>
+	<script src="build/react-dom.development.js"></script>
+	<script src="build/framer.js"></script>
+
+	<link href="build/Draft.css" rel="stylesheet" />
+	<link href="build/style.css" rel="stylesheet" />
+
+    <!-- Workaround for a WebKit bug: loading via URL from the stylesheet is denied if this file is loaded via file:/// -->
+    <style>
+        @font-face {
+            font-family: "Roboto Mono";
+            font-style: normal;
+            font-weight: 400;
+            src: local("Roboto Mono"), local("RobotoMono-Regular"), url("fonts/RobotoMono-Regular.ttf") format("truetype");
+        }
+    </style>
+    <style>
+        * {
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+
+</head>
+
+<body>
+    <main></main>
+	<script src="build/standalone.js"></script>
+	
+	<script id="build_index_js">
+	(function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory(require("framer"), require("react"));
 	else if(typeof define === 'function' && define.amd)
@@ -583,7 +621,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sho
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var framer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! framer */ \"framer\");\n/* harmony import */ var framer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(framer__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _animate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../animate */ \"./code/animate/index.js\");\n/* harmony import */ var _datas__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../datas */ \"./code/datas/index.js\");\n\n\n\n\n\nconst noses = [_datas__WEBPACK_IMPORTED_MODULE_2__[\"nose1\"], _datas__WEBPACK_IMPORTED_MODULE_2__[\"nose2\"], _datas__WEBPACK_IMPORTED_MODULE_2__[\"nose3\"]]\nconst animations = [_animate__WEBPACK_IMPORTED_MODULE_1__[\"showNose1\"], _animate__WEBPACK_IMPORTED_MODULE_1__[\"showNose2\"], _animate__WEBPACK_IMPORTED_MODULE_1__[\"showNose3\"]]\nconst lock = [false, false, false]\n\nconst fadeOthers = index => {\n  for (let i = 0; i < noses.length; i++) {\n    if (i == index)\n      framer__WEBPACK_IMPORTED_MODULE_0__[\"animate\"].easeInOut(noses[i].wrapOpacity, 0.99, { duration: 0.3 })\n    else framer__WEBPACK_IMPORTED_MODULE_0__[\"animate\"].easeInOut(noses[i].wrapOpacity, 0.55, { duration: 0.3 })\n  }\n}\n\nconst pageHandle = index => {\n  if (!lock[index]) {\n    console.log('animate! - ', index)\n    animations[index]()\n    lock[index] = true\n  }\n  fadeOthers(index)\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (pageHandle);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb2RlL2FuaW1hdGUvcGFnZUhhbmRsZS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7OztBQUFrQjtBQUN3Qjs7QUFFWjs7QUFFOUI7QUFDQTtBQUNBOztBQUVBO0FBQ0EsaUJBQWlCLGtCQUFrQjtBQUNuQztBQUNBLDRGQUFxRCxnQkFBZ0I7QUFDckUsK0ZBQXdELGdCQUFnQjtBQUN4RTtBQUNBOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUEiLCJmaWxlIjoiLi9jb2RlL2FuaW1hdGUvcGFnZUhhbmRsZS5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGFuaW1hdGUgfSBmcm9tICdmcmFtZXInXG5pbXBvcnQgeyBzaG93Tm9zZTEsIHNob3dOb3NlMiwgc2hvd05vc2UzIH0gZnJvbSAnLi4vYW5pbWF0ZSdcblxuaW1wb3J0IHsgbm9zZTEsIG5vc2UyLCBub3NlMyB9IGZyb20gJy4uL2RhdGFzJ1xuXG5jb25zdCBub3NlcyA9IFtub3NlMSwgbm9zZTIsIG5vc2UzXVxuY29uc3QgYW5pbWF0aW9ucyA9IFtzaG93Tm9zZTEsIHNob3dOb3NlMiwgc2hvd05vc2UzXVxuY29uc3QgbG9jayA9IFtmYWxzZSwgZmFsc2UsIGZhbHNlXVxuXG5jb25zdCBmYWRlT3RoZXJzID0gaW5kZXggPT4ge1xuICBmb3IgKGxldCBpID0gMDsgaSA8IG5vc2VzLmxlbmd0aDsgaSsrKSB7XG4gICAgaWYgKGkgPT0gaW5kZXgpXG4gICAgICBhbmltYXRlLmVhc2VJbk91dChub3Nlc1tpXS53cmFwT3BhY2l0eSwgMC45OSwgeyBkdXJhdGlvbjogMC4zIH0pXG4gICAgZWxzZSBhbmltYXRlLmVhc2VJbk91dChub3Nlc1tpXS53cmFwT3BhY2l0eSwgMC41NSwgeyBkdXJhdGlvbjogMC4zIH0pXG4gIH1cbn1cblxuY29uc3QgcGFnZUhhbmRsZSA9IGluZGV4ID0+IHtcbiAgaWYgKCFsb2NrW2luZGV4XSkge1xuICAgIGNvbnNvbGUubG9nKCdhbmltYXRlISAtICcsIGluZGV4KVxuICAgIGFuaW1hdGlvbnNbaW5kZXhdKClcbiAgICBsb2NrW2luZGV4XSA9IHRydWVcbiAgfVxuICBmYWRlT3RoZXJzKGluZGV4KVxufVxuXG5leHBvcnQgZGVmYXVsdCBwYWdlSGFuZGxlXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./code/animate/pageHandle.js\n");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _animate__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../animate */ \"./code/animate/index.js\");\n\n\nconst animations = [_animate__WEBPACK_IMPORTED_MODULE_0__[\"showNose1\"], _animate__WEBPACK_IMPORTED_MODULE_0__[\"showNose2\"], _animate__WEBPACK_IMPORTED_MODULE_0__[\"showNose3\"]]\nconst lock = [false, false, false]\n\nconst pageHandle = index => {\n  if (!lock[index]) {\n    console.log('animate! - ', index)\n    animations[index]()\n    lock[index] = true\n  }\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (pageHandle);\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9jb2RlL2FuaW1hdGUvcGFnZUhhbmRsZS5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUEwQzs7QUFFMUM7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQSIsImZpbGUiOiIuL2NvZGUvYW5pbWF0ZS9wYWdlSGFuZGxlLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgc2hvd05vc2UxLCBzaG93Tm9zZTIsIHNob3dOb3NlMyB9IGZyb20gJy4uL2FuaW1hdGUnXG5cbmNvbnN0IGFuaW1hdGlvbnMgPSBbc2hvd05vc2UxLCBzaG93Tm9zZTIsIHNob3dOb3NlM11cbmNvbnN0IGxvY2sgPSBbZmFsc2UsIGZhbHNlLCBmYWxzZV1cblxuY29uc3QgcGFnZUhhbmRsZSA9IGluZGV4ID0+IHtcbiAgaWYgKCFsb2NrW2luZGV4XSkge1xuICAgIGNvbnNvbGUubG9nKCdhbmltYXRlISAtICcsIGluZGV4KVxuICAgIGFuaW1hdGlvbnNbaW5kZXhdKClcbiAgICBsb2NrW2luZGV4XSA9IHRydWVcbiAgfVxufVxuXG5leHBvcnQgZGVmYXVsdCBwYWdlSGFuZGxlXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./code/animate/pageHandle.js\n");
 
 /***/ }),
 
@@ -647,7 +685,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var fram
 Object.defineProperty(exports, "__esModule", { value: true });
 // WARNING: this file is auto generated, any changes will be lost
 const framer_1 = __webpack_require__(/*! framer */ "framer");
-const canvas = framer_1.CanvasStore.shared({"children":[]});
+const canvas = framer_1.CanvasStore.shared(); // CANVAS_DATA;
 
 
 /***/ }),
@@ -818,3 +856,1572 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_react__;
 
 /******/ });
 });
+	</script>
+	
+	<script>
+	const data = {
+  "presentationNode": {
+    "componentClass": "Frame",
+    "props": {
+      "key": "pBYtmZRYw",
+      "id": "id_pBYtmZRYw",
+      "willChangeTransform": false,
+      "opacity": 1,
+      "radius": 0,
+      "rotation": 0,
+      "visible": true,
+      "overflow": "hidden",
+      "background": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 1,
+        "h": 0,
+        "s": 0,
+        "l": 1,
+        "initialValue": "rgba(255,255,255,1)",
+        "roundA": 1,
+        "format": "rgb"
+      },
+      "shadows": [],
+      "left": 514,
+      "right": null,
+      "top": 912,
+      "bottom": null,
+      "width": 375,
+      "height": 812,
+      "aspectRatio": null,
+      "centerX": "0%",
+      "centerY": "0%",
+      "parentSize": null
+    },
+    "children": [
+      {
+        "componentClass": "ComponentContainer",
+        "props": {
+          "key": "PBLXZty8b",
+          "id": "id_PBLXZty8b",
+          "willChangeTransform": false,
+          "rotation": 0,
+          "opacity": 1,
+          "componentIdentifier": "framer/Page",
+          "background": null,
+          "visible": true,
+          "left": null,
+          "right": null,
+          "top": 0,
+          "bottom": null,
+          "width": 375,
+          "height": 812,
+          "aspectRatio": null,
+          "centerX": "50%",
+          "centerY": "50%",
+          "parentSize": null,
+          "overflow": "hidden",
+          "radius": 0,
+          "shadows": []
+        },
+        "children": [
+          {
+            "componentClass": "framer/Page",
+            "props": {
+              "direction": "horizontal",
+              "contentWidth": "stretch",
+              "contentHeight": "stretch",
+              "alignment": "start",
+              "gap": 10,
+              "padding": 50,
+              "paddingPerSide": false,
+              "paddingTop": 0,
+              "paddingRight": 0,
+              "paddingBottom": 0,
+              "paddingLeft": 0,
+              "currentPage": 0,
+              "momentum": true,
+              "draggingEnabled": true,
+              "defaultEffect": "coverflow",
+              "placeholders": null,
+              "__slotKeys": [
+                "children"
+              ],
+              "children": [
+                {
+                  "componentClass": "Frame",
+                  "props": {
+                    "key": "CQj6n8edg",
+                    "id": "id_CQj6n8edg",
+                    "willChangeTransform": false,
+                    "opacity": 1,
+                    "radius": 0,
+                    "rotation": 0,
+                    "visible": true,
+                    "overflow": "visible",
+                    "background": null,
+                    "shadows": [],
+                    "left": 1168,
+                    "right": null,
+                    "top": 960,
+                    "bottom": null,
+                    "width": 100,
+                    "height": 100,
+                    "aspectRatio": null,
+                    "centerX": "74.66666666666667%",
+                    "centerY": "66.7487684729064%",
+                    "parentSize": null
+                  },
+                  "children": [
+                    {
+                      "componentClass": "Frame",
+                      "props": {
+                        "key": "lMrV5Qhmn",
+                        "id": "id_lMrV5Qhmn",
+                        "willChangeTransform": false,
+                        "opacity": 1,
+                        "radius": 100,
+                        "rotation": 0,
+                        "visible": true,
+                        "overflow": "hidden",
+                        "background": {
+                          "r": 221.442,
+                          "g": 48.858,
+                          "b": 54.61079999999986,
+                          "a": 1,
+                          "h": 358,
+                          "s": 0.72,
+                          "l": 0.53,
+                          "initialValue": "hsl(358, 72%, 53%)",
+                          "roundA": 1,
+                          "format": "hsl"
+                        },
+                        "shadows": [],
+                        "left": null,
+                        "right": null,
+                        "top": null,
+                        "bottom": null,
+                        "width": 100,
+                        "height": 100,
+                        "aspectRatio": null,
+                        "centerX": "50%",
+                        "centerY": "50%",
+                        "parentSize": null
+                      },
+                      "children": [
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "RCl47PwZh",
+                            "id": "id_RCl47PwZh",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 40,
+                            "rotation": 0,
+                            "visible": false,
+                            "overflow": "visible",
+                            "background": {
+                              "r": 222,
+                              "g": 49,
+                              "b": 53,
+                              "a": 1,
+                              "h": 358.6127167630058,
+                              "s": 0.7238493723849373,
+                              "l": 0.5313725490196078,
+                              "initialValue": "rgba(222, 49, 53, 1.00)",
+                              "roundA": 1,
+                              "format": "rgb"
+                            },
+                            "shadows": [],
+                            "left": null,
+                            "right": 30,
+                            "top": null,
+                            "bottom": 30,
+                            "width": 23,
+                            "height": 21,
+                            "aspectRatio": null,
+                            "centerX": "68.07692307692308%",
+                            "centerY": "66.8%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./Rudolph.tsx_NextButton"
+                        },
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "cvbSKRlZw",
+                            "id": "id_cvbSKRlZw",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "src": "kcbMSNP3Ky5Zq3Tjz4jvflSiB5U.png",
+                              "pixelWidth": 200,
+                              "pixelHeight": 200,
+                              "intrinsicWidth": 100,
+                              "intrinsicHeight": 100,
+                              "fit": "fill"
+                            },
+                            "shadows": [],
+                            "dropShadows": [],
+                            "left": 0,
+                            "right": 0,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 100,
+                            "height": 100,
+                            "aspectRatio": 1,
+                            "centerX": "50%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_NoseImg"
+                        },
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "yj1G8Ma4U",
+                            "id": "id_yj1G8Ma4U",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "src": "to8kvTXKTuYeiLxSxHTTovQQ1U.jpg",
+                              "pixelWidth": 500,
+                              "pixelHeight": 500,
+                              "intrinsicWidth": 250,
+                              "intrinsicHeight": 250,
+                              "fit": "fill"
+                            },
+                            "shadows": [],
+                            "dropShadows": [],
+                            "left": null,
+                            "right": null,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 300,
+                            "height": 350,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "175%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_CoverImage01"
+                        }
+                      ],
+                      "codeOverrideIdentifier": "./App.tsx_Nose01"
+                    },
+                    {
+                      "componentClass": "Frame",
+                      "props": {
+                        "key": "VjV2IeYaw",
+                        "id": "id_VjV2IeYaw",
+                        "willChangeTransform": false,
+                        "opacity": 1,
+                        "radius": 0,
+                        "rotation": 0,
+                        "visible": true,
+                        "overflow": "visible",
+                        "background": null,
+                        "shadows": [],
+                        "left": null,
+                        "right": null,
+                        "top": -200,
+                        "bottom": null,
+                        "width": 190,
+                        "height": 54,
+                        "aspectRatio": null,
+                        "centerX": "50%",
+                        "centerY": "-173%",
+                        "parentSize": null
+                      },
+                      "children": [
+                        {
+                          "componentClass": "Text",
+                          "props": {
+                            "key": "iGm8R1Tlf",
+                            "id": "id_iGm8R1Tlf",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "rotation": 0,
+                            "visible": true,
+                            "autoSize": true,
+                            "size": {
+                              "width": 190,
+                              "height": 54
+                            },
+                            "shadows": [],
+                            "rawHTML": "<div data-offset-key=\"fdvc4-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"fdvc4-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Black&quot;, &quot;SFProDisplay-Black&quot;, &quot;.SFUIDisplay-Black&quot;, sans-serif;-webkit-text-fill-color:#DD3137;font-size:45px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">Track 01</span></span></div>",
+                            "left": null,
+                            "right": null,
+                            "top": null,
+                            "bottom": null,
+                            "width": 190,
+                            "height": 54,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          }
+                        },
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "f6kQGPnFH",
+                            "id": "id_f6kQGPnFH",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "r": 255,
+                              "g": 255,
+                              "b": 255,
+                              "a": 1,
+                              "h": 0,
+                              "s": 0,
+                              "l": 1,
+                              "initialValue": "rgba(255,255,255,1)",
+                              "roundA": 1,
+                              "format": "rgb"
+                            },
+                            "shadows": [],
+                            "left": null,
+                            "right": null,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 190,
+                            "height": 54,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_TitleOverlay01"
+                        }
+                      ]
+                    }
+                  ],
+                  "codeOverrideIdentifier": "./App.tsx_NoseWrap01"
+                },
+                {
+                  "componentClass": "Frame",
+                  "props": {
+                    "key": "vpCSUBlMZ",
+                    "id": "id_vpCSUBlMZ",
+                    "willChangeTransform": false,
+                    "opacity": 1,
+                    "radius": 0,
+                    "rotation": 0,
+                    "visible": true,
+                    "overflow": "visible",
+                    "background": null,
+                    "shadows": [],
+                    "left": 1168,
+                    "right": null,
+                    "top": 1313,
+                    "bottom": null,
+                    "width": 100,
+                    "height": 100,
+                    "aspectRatio": null,
+                    "centerX": "50%",
+                    "centerY": "42.57142857142857%",
+                    "parentSize": null
+                  },
+                  "children": [
+                    {
+                      "componentClass": "Frame",
+                      "props": {
+                        "key": "gGYFzfrZZ",
+                        "id": "id_gGYFzfrZZ",
+                        "willChangeTransform": false,
+                        "opacity": 1,
+                        "radius": 100,
+                        "rotation": 0,
+                        "visible": true,
+                        "overflow": "hidden",
+                        "background": {
+                          "r": 221.442,
+                          "g": 48.858,
+                          "b": 54.61079999999986,
+                          "a": 1,
+                          "h": 358,
+                          "s": 0.72,
+                          "l": 0.53,
+                          "initialValue": "hsl(358, 72%, 53%)",
+                          "roundA": 1,
+                          "format": "hsl"
+                        },
+                        "shadows": [],
+                        "left": null,
+                        "right": null,
+                        "top": null,
+                        "bottom": null,
+                        "width": 100,
+                        "height": 100,
+                        "aspectRatio": null,
+                        "centerX": "50%",
+                        "centerY": "50%",
+                        "parentSize": null
+                      },
+                      "children": [
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "LyHB1Rbnf",
+                            "id": "id_LyHB1Rbnf",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "src": "KPTPf58Ab1IlrVigFOr2YFgZzyY.jpg",
+                              "pixelWidth": 500,
+                              "pixelHeight": 489,
+                              "intrinsicWidth": 250,
+                              "intrinsicHeight": 244.5,
+                              "fit": "fill"
+                            },
+                            "shadows": [],
+                            "dropShadows": [],
+                            "left": null,
+                            "right": null,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 300,
+                            "height": 350,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "175%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_CoverImage02"
+                        }
+                      ],
+                      "codeOverrideIdentifier": "./App.tsx_Nose02"
+                    },
+                    {
+                      "componentClass": "Frame",
+                      "props": {
+                        "key": "NtlzHzXq_",
+                        "id": "id_NtlzHzXq_",
+                        "willChangeTransform": false,
+                        "opacity": 1,
+                        "radius": 0,
+                        "rotation": 0,
+                        "visible": true,
+                        "overflow": "visible",
+                        "background": null,
+                        "shadows": [],
+                        "left": null,
+                        "right": null,
+                        "top": -200,
+                        "bottom": null,
+                        "width": 190,
+                        "height": 54,
+                        "aspectRatio": null,
+                        "centerX": "50%",
+                        "centerY": "-173%",
+                        "parentSize": null
+                      },
+                      "children": [
+                        {
+                          "componentClass": "Text",
+                          "props": {
+                            "key": "Fcr0VhySf",
+                            "id": "id_Fcr0VhySf",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "rotation": 0,
+                            "visible": true,
+                            "autoSize": true,
+                            "size": {
+                              "width": 196,
+                              "height": 54
+                            },
+                            "shadows": [],
+                            "rawHTML": "<div data-offset-key=\"fdvc4-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"fdvc4-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Black&quot;, &quot;SFProDisplay-Black&quot;, &quot;.SFUIDisplay-Black&quot;, sans-serif;-webkit-text-fill-color:#DD3137;font-size:45px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">Track 02</span></span></div>",
+                            "left": null,
+                            "right": null,
+                            "top": null,
+                            "bottom": null,
+                            "width": 196,
+                            "height": 54,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          }
+                        },
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "tb5Vaot1C",
+                            "id": "id_tb5Vaot1C",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "r": 255,
+                              "g": 255,
+                              "b": 255,
+                              "a": 1,
+                              "h": 0,
+                              "s": 0,
+                              "l": 1,
+                              "initialValue": "#FFFFFF",
+                              "roundA": 1,
+                              "format": "rgb"
+                            },
+                            "shadows": [],
+                            "left": null,
+                            "right": null,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 200,
+                            "height": 54,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_TitleOverlay02"
+                        }
+                      ]
+                    }
+                  ],
+                  "codeOverrideIdentifier": "./App.tsx_NoseWrap02"
+                },
+                {
+                  "componentClass": "Frame",
+                  "props": {
+                    "key": "zpbXssaNB",
+                    "id": "id_zpbXssaNB",
+                    "willChangeTransform": false,
+                    "opacity": 1,
+                    "radius": 0,
+                    "rotation": 0,
+                    "visible": true,
+                    "overflow": "visible",
+                    "background": null,
+                    "shadows": [],
+                    "left": 1168,
+                    "right": null,
+                    "top": 1743,
+                    "bottom": null,
+                    "width": 100,
+                    "height": 100,
+                    "aspectRatio": null,
+                    "centerX": "50%",
+                    "centerY": "42.57142857142857%",
+                    "parentSize": null
+                  },
+                  "children": [
+                    {
+                      "componentClass": "Frame",
+                      "props": {
+                        "key": "aM0XjD6f3",
+                        "id": "id_aM0XjD6f3",
+                        "willChangeTransform": false,
+                        "opacity": 1,
+                        "radius": 100,
+                        "rotation": 0,
+                        "visible": true,
+                        "overflow": "hidden",
+                        "background": {
+                          "r": 221.442,
+                          "g": 48.858,
+                          "b": 54.61079999999986,
+                          "a": 1,
+                          "h": 358,
+                          "s": 0.72,
+                          "l": 0.53,
+                          "initialValue": "hsl(358, 72%, 53%)",
+                          "roundA": 1,
+                          "format": "hsl"
+                        },
+                        "shadows": [],
+                        "left": null,
+                        "right": null,
+                        "top": null,
+                        "bottom": null,
+                        "width": 100,
+                        "height": 100,
+                        "aspectRatio": null,
+                        "centerX": "50%",
+                        "centerY": "50%",
+                        "parentSize": null
+                      },
+                      "children": [
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "pQ3AZGGNN",
+                            "id": "id_pQ3AZGGNN",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "src": "eQX2pvqXjq9T6YMdkVGfcjgUGU.jpg",
+                              "pixelWidth": 700,
+                              "pixelHeight": 700,
+                              "intrinsicWidth": 350,
+                              "intrinsicHeight": 350,
+                              "fit": "fill"
+                            },
+                            "shadows": [],
+                            "dropShadows": [],
+                            "left": null,
+                            "right": null,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 300,
+                            "height": 350,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "175%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_CoverImage03"
+                        }
+                      ],
+                      "codeOverrideIdentifier": "./App.tsx_Nose03"
+                    },
+                    {
+                      "componentClass": "Frame",
+                      "props": {
+                        "key": "cXKllzyKn",
+                        "id": "id_cXKllzyKn",
+                        "willChangeTransform": false,
+                        "opacity": 1,
+                        "radius": 0,
+                        "rotation": 0,
+                        "visible": true,
+                        "overflow": "visible",
+                        "background": null,
+                        "shadows": [],
+                        "left": null,
+                        "right": null,
+                        "top": -200,
+                        "bottom": null,
+                        "width": 190,
+                        "height": 54,
+                        "aspectRatio": null,
+                        "centerX": "50%",
+                        "centerY": "-173%",
+                        "parentSize": null
+                      },
+                      "children": [
+                        {
+                          "componentClass": "Text",
+                          "props": {
+                            "key": "rRHgOL5rt",
+                            "id": "id_rRHgOL5rt",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "rotation": 0,
+                            "visible": true,
+                            "autoSize": true,
+                            "size": {
+                              "width": 197,
+                              "height": 54
+                            },
+                            "shadows": [],
+                            "rawHTML": "<div data-offset-key=\"fdvc4-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"fdvc4-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Black&quot;, &quot;SFProDisplay-Black&quot;, &quot;.SFUIDisplay-Black&quot;, sans-serif;-webkit-text-fill-color:#DD3137;font-size:45px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">Track 03</span></span></div>",
+                            "left": null,
+                            "right": null,
+                            "top": null,
+                            "bottom": null,
+                            "width": 197,
+                            "height": 54,
+                            "aspectRatio": null,
+                            "centerX": "50.26315789473684%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          }
+                        },
+                        {
+                          "componentClass": "Frame",
+                          "props": {
+                            "key": "gxmEJic8g",
+                            "id": "id_gxmEJic8g",
+                            "willChangeTransform": false,
+                            "opacity": 1,
+                            "radius": 0,
+                            "rotation": 0,
+                            "visible": true,
+                            "overflow": "visible",
+                            "background": {
+                              "r": 255,
+                              "g": 255,
+                              "b": 255,
+                              "a": 1,
+                              "h": 0,
+                              "s": 0,
+                              "l": 1,
+                              "initialValue": "#FFFFFF",
+                              "roundA": 1,
+                              "format": "rgb"
+                            },
+                            "shadows": [],
+                            "left": null,
+                            "right": null,
+                            "top": 0,
+                            "bottom": null,
+                            "width": 200,
+                            "height": 54,
+                            "aspectRatio": null,
+                            "centerX": "50%",
+                            "centerY": "50%",
+                            "parentSize": null
+                          },
+                          "children": [],
+                          "codeOverrideIdentifier": "./App.tsx_TitleOverlay03"
+                        }
+                      ]
+                    }
+                  ],
+                  "codeOverrideIdentifier": "./App.tsx_NoseWrap03"
+                }
+              ],
+              "id": "PBLXZty8bframer/Page",
+              "key": "PBLXZty8bframer/Page"
+            },
+            "children": [
+              {
+                "componentClass": "Frame",
+                "props": {
+                  "key": "CQj6n8edg",
+                  "id": "id_CQj6n8edg",
+                  "willChangeTransform": false,
+                  "opacity": 1,
+                  "radius": 0,
+                  "rotation": 0,
+                  "visible": true,
+                  "overflow": "visible",
+                  "background": null,
+                  "shadows": [],
+                  "left": 1168,
+                  "right": null,
+                  "top": 960,
+                  "bottom": null,
+                  "width": 100,
+                  "height": 100,
+                  "aspectRatio": null,
+                  "centerX": "74.66666666666667%",
+                  "centerY": "66.7487684729064%",
+                  "parentSize": null
+                },
+                "children": [
+                  {
+                    "componentClass": "Frame",
+                    "props": {
+                      "key": "lMrV5Qhmn",
+                      "id": "id_lMrV5Qhmn",
+                      "willChangeTransform": false,
+                      "opacity": 1,
+                      "radius": 100,
+                      "rotation": 0,
+                      "visible": true,
+                      "overflow": "hidden",
+                      "background": {
+                        "r": 221.442,
+                        "g": 48.858,
+                        "b": 54.61079999999986,
+                        "a": 1,
+                        "h": 358,
+                        "s": 0.72,
+                        "l": 0.53,
+                        "initialValue": "hsl(358, 72%, 53%)",
+                        "roundA": 1,
+                        "format": "hsl"
+                      },
+                      "shadows": [],
+                      "left": null,
+                      "right": null,
+                      "top": null,
+                      "bottom": null,
+                      "width": 100,
+                      "height": 100,
+                      "aspectRatio": null,
+                      "centerX": "50%",
+                      "centerY": "50%",
+                      "parentSize": null
+                    },
+                    "children": [
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "RCl47PwZh",
+                          "id": "id_RCl47PwZh",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 40,
+                          "rotation": 0,
+                          "visible": false,
+                          "overflow": "visible",
+                          "background": {
+                            "r": 222,
+                            "g": 49,
+                            "b": 53,
+                            "a": 1,
+                            "h": 358.6127167630058,
+                            "s": 0.7238493723849373,
+                            "l": 0.5313725490196078,
+                            "initialValue": "rgba(222, 49, 53, 1.00)",
+                            "roundA": 1,
+                            "format": "rgb"
+                          },
+                          "shadows": [],
+                          "left": null,
+                          "right": 30,
+                          "top": null,
+                          "bottom": 30,
+                          "width": 23,
+                          "height": 21,
+                          "aspectRatio": null,
+                          "centerX": "68.07692307692308%",
+                          "centerY": "66.8%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./Rudolph.tsx_NextButton"
+                      },
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "cvbSKRlZw",
+                          "id": "id_cvbSKRlZw",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "src": "kcbMSNP3Ky5Zq3Tjz4jvflSiB5U.png",
+                            "pixelWidth": 200,
+                            "pixelHeight": 200,
+                            "intrinsicWidth": 100,
+                            "intrinsicHeight": 100,
+                            "fit": "fill"
+                          },
+                          "shadows": [],
+                          "dropShadows": [],
+                          "left": 0,
+                          "right": 0,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 100,
+                          "height": 100,
+                          "aspectRatio": 1,
+                          "centerX": "50%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_NoseImg"
+                      },
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "yj1G8Ma4U",
+                          "id": "id_yj1G8Ma4U",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "src": "to8kvTXKTuYeiLxSxHTTovQQ1U.jpg",
+                            "pixelWidth": 500,
+                            "pixelHeight": 500,
+                            "intrinsicWidth": 250,
+                            "intrinsicHeight": 250,
+                            "fit": "fill"
+                          },
+                          "shadows": [],
+                          "dropShadows": [],
+                          "left": null,
+                          "right": null,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 300,
+                          "height": 350,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "175%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_CoverImage01"
+                      }
+                    ],
+                    "codeOverrideIdentifier": "./App.tsx_Nose01"
+                  },
+                  {
+                    "componentClass": "Frame",
+                    "props": {
+                      "key": "VjV2IeYaw",
+                      "id": "id_VjV2IeYaw",
+                      "willChangeTransform": false,
+                      "opacity": 1,
+                      "radius": 0,
+                      "rotation": 0,
+                      "visible": true,
+                      "overflow": "visible",
+                      "background": null,
+                      "shadows": [],
+                      "left": null,
+                      "right": null,
+                      "top": -200,
+                      "bottom": null,
+                      "width": 190,
+                      "height": 54,
+                      "aspectRatio": null,
+                      "centerX": "50%",
+                      "centerY": "-173%",
+                      "parentSize": null
+                    },
+                    "children": [
+                      {
+                        "componentClass": "Text",
+                        "props": {
+                          "key": "iGm8R1Tlf",
+                          "id": "id_iGm8R1Tlf",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "rotation": 0,
+                          "visible": true,
+                          "autoSize": true,
+                          "size": {
+                            "width": 190,
+                            "height": 54
+                          },
+                          "shadows": [],
+                          "rawHTML": "<div data-offset-key=\"fdvc4-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"fdvc4-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Black&quot;, &quot;SFProDisplay-Black&quot;, &quot;.SFUIDisplay-Black&quot;, sans-serif;-webkit-text-fill-color:#DD3137;font-size:45px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">Track 01</span></span></div>",
+                          "left": null,
+                          "right": null,
+                          "top": null,
+                          "bottom": null,
+                          "width": 190,
+                          "height": 54,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        }
+                      },
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "f6kQGPnFH",
+                          "id": "id_f6kQGPnFH",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255,
+                            "a": 1,
+                            "h": 0,
+                            "s": 0,
+                            "l": 1,
+                            "initialValue": "rgba(255,255,255,1)",
+                            "roundA": 1,
+                            "format": "rgb"
+                          },
+                          "shadows": [],
+                          "left": null,
+                          "right": null,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 190,
+                          "height": 54,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_TitleOverlay01"
+                      }
+                    ]
+                  }
+                ],
+                "codeOverrideIdentifier": "./App.tsx_NoseWrap01"
+              },
+              {
+                "componentClass": "Frame",
+                "props": {
+                  "key": "vpCSUBlMZ",
+                  "id": "id_vpCSUBlMZ",
+                  "willChangeTransform": false,
+                  "opacity": 1,
+                  "radius": 0,
+                  "rotation": 0,
+                  "visible": true,
+                  "overflow": "visible",
+                  "background": null,
+                  "shadows": [],
+                  "left": 1168,
+                  "right": null,
+                  "top": 1313,
+                  "bottom": null,
+                  "width": 100,
+                  "height": 100,
+                  "aspectRatio": null,
+                  "centerX": "50%",
+                  "centerY": "42.57142857142857%",
+                  "parentSize": null
+                },
+                "children": [
+                  {
+                    "componentClass": "Frame",
+                    "props": {
+                      "key": "gGYFzfrZZ",
+                      "id": "id_gGYFzfrZZ",
+                      "willChangeTransform": false,
+                      "opacity": 1,
+                      "radius": 100,
+                      "rotation": 0,
+                      "visible": true,
+                      "overflow": "hidden",
+                      "background": {
+                        "r": 221.442,
+                        "g": 48.858,
+                        "b": 54.61079999999986,
+                        "a": 1,
+                        "h": 358,
+                        "s": 0.72,
+                        "l": 0.53,
+                        "initialValue": "hsl(358, 72%, 53%)",
+                        "roundA": 1,
+                        "format": "hsl"
+                      },
+                      "shadows": [],
+                      "left": null,
+                      "right": null,
+                      "top": null,
+                      "bottom": null,
+                      "width": 100,
+                      "height": 100,
+                      "aspectRatio": null,
+                      "centerX": "50%",
+                      "centerY": "50%",
+                      "parentSize": null
+                    },
+                    "children": [
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "LyHB1Rbnf",
+                          "id": "id_LyHB1Rbnf",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "src": "KPTPf58Ab1IlrVigFOr2YFgZzyY.jpg",
+                            "pixelWidth": 500,
+                            "pixelHeight": 489,
+                            "intrinsicWidth": 250,
+                            "intrinsicHeight": 244.5,
+                            "fit": "fill"
+                          },
+                          "shadows": [],
+                          "dropShadows": [],
+                          "left": null,
+                          "right": null,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 300,
+                          "height": 350,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "175%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_CoverImage02"
+                      }
+                    ],
+                    "codeOverrideIdentifier": "./App.tsx_Nose02"
+                  },
+                  {
+                    "componentClass": "Frame",
+                    "props": {
+                      "key": "NtlzHzXq_",
+                      "id": "id_NtlzHzXq_",
+                      "willChangeTransform": false,
+                      "opacity": 1,
+                      "radius": 0,
+                      "rotation": 0,
+                      "visible": true,
+                      "overflow": "visible",
+                      "background": null,
+                      "shadows": [],
+                      "left": null,
+                      "right": null,
+                      "top": -200,
+                      "bottom": null,
+                      "width": 190,
+                      "height": 54,
+                      "aspectRatio": null,
+                      "centerX": "50%",
+                      "centerY": "-173%",
+                      "parentSize": null
+                    },
+                    "children": [
+                      {
+                        "componentClass": "Text",
+                        "props": {
+                          "key": "Fcr0VhySf",
+                          "id": "id_Fcr0VhySf",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "rotation": 0,
+                          "visible": true,
+                          "autoSize": true,
+                          "size": {
+                            "width": 196,
+                            "height": 54
+                          },
+                          "shadows": [],
+                          "rawHTML": "<div data-offset-key=\"fdvc4-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"fdvc4-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Black&quot;, &quot;SFProDisplay-Black&quot;, &quot;.SFUIDisplay-Black&quot;, sans-serif;-webkit-text-fill-color:#DD3137;font-size:45px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">Track 02</span></span></div>",
+                          "left": null,
+                          "right": null,
+                          "top": null,
+                          "bottom": null,
+                          "width": 196,
+                          "height": 54,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        }
+                      },
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "tb5Vaot1C",
+                          "id": "id_tb5Vaot1C",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255,
+                            "a": 1,
+                            "h": 0,
+                            "s": 0,
+                            "l": 1,
+                            "initialValue": "#FFFFFF",
+                            "roundA": 1,
+                            "format": "rgb"
+                          },
+                          "shadows": [],
+                          "left": null,
+                          "right": null,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 200,
+                          "height": 54,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_TitleOverlay02"
+                      }
+                    ]
+                  }
+                ],
+                "codeOverrideIdentifier": "./App.tsx_NoseWrap02"
+              },
+              {
+                "componentClass": "Frame",
+                "props": {
+                  "key": "zpbXssaNB",
+                  "id": "id_zpbXssaNB",
+                  "willChangeTransform": false,
+                  "opacity": 1,
+                  "radius": 0,
+                  "rotation": 0,
+                  "visible": true,
+                  "overflow": "visible",
+                  "background": null,
+                  "shadows": [],
+                  "left": 1168,
+                  "right": null,
+                  "top": 1743,
+                  "bottom": null,
+                  "width": 100,
+                  "height": 100,
+                  "aspectRatio": null,
+                  "centerX": "50%",
+                  "centerY": "42.57142857142857%",
+                  "parentSize": null
+                },
+                "children": [
+                  {
+                    "componentClass": "Frame",
+                    "props": {
+                      "key": "aM0XjD6f3",
+                      "id": "id_aM0XjD6f3",
+                      "willChangeTransform": false,
+                      "opacity": 1,
+                      "radius": 100,
+                      "rotation": 0,
+                      "visible": true,
+                      "overflow": "hidden",
+                      "background": {
+                        "r": 221.442,
+                        "g": 48.858,
+                        "b": 54.61079999999986,
+                        "a": 1,
+                        "h": 358,
+                        "s": 0.72,
+                        "l": 0.53,
+                        "initialValue": "hsl(358, 72%, 53%)",
+                        "roundA": 1,
+                        "format": "hsl"
+                      },
+                      "shadows": [],
+                      "left": null,
+                      "right": null,
+                      "top": null,
+                      "bottom": null,
+                      "width": 100,
+                      "height": 100,
+                      "aspectRatio": null,
+                      "centerX": "50%",
+                      "centerY": "50%",
+                      "parentSize": null
+                    },
+                    "children": [
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "pQ3AZGGNN",
+                          "id": "id_pQ3AZGGNN",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "src": "eQX2pvqXjq9T6YMdkVGfcjgUGU.jpg",
+                            "pixelWidth": 700,
+                            "pixelHeight": 700,
+                            "intrinsicWidth": 350,
+                            "intrinsicHeight": 350,
+                            "fit": "fill"
+                          },
+                          "shadows": [],
+                          "dropShadows": [],
+                          "left": null,
+                          "right": null,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 300,
+                          "height": 350,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "175%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_CoverImage03"
+                      }
+                    ],
+                    "codeOverrideIdentifier": "./App.tsx_Nose03"
+                  },
+                  {
+                    "componentClass": "Frame",
+                    "props": {
+                      "key": "cXKllzyKn",
+                      "id": "id_cXKllzyKn",
+                      "willChangeTransform": false,
+                      "opacity": 1,
+                      "radius": 0,
+                      "rotation": 0,
+                      "visible": true,
+                      "overflow": "visible",
+                      "background": null,
+                      "shadows": [],
+                      "left": null,
+                      "right": null,
+                      "top": -200,
+                      "bottom": null,
+                      "width": 190,
+                      "height": 54,
+                      "aspectRatio": null,
+                      "centerX": "50%",
+                      "centerY": "-173%",
+                      "parentSize": null
+                    },
+                    "children": [
+                      {
+                        "componentClass": "Text",
+                        "props": {
+                          "key": "rRHgOL5rt",
+                          "id": "id_rRHgOL5rt",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "rotation": 0,
+                          "visible": true,
+                          "autoSize": true,
+                          "size": {
+                            "width": 197,
+                            "height": 54
+                          },
+                          "shadows": [],
+                          "rawHTML": "<div data-offset-key=\"fdvc4-0-0\" class=\"public-DraftStyleDefault-block public-DraftStyleDefault-ltr\"><span data-offset-key=\"fdvc4-0-0\" style=\"tab-size:4;font-family:&quot;.SFNSDisplay-Black&quot;, &quot;SFProDisplay-Black&quot;, &quot;.SFUIDisplay-Black&quot;, sans-serif;-webkit-text-fill-color:#DD3137;font-size:45px;letter-spacing:0px;line-height:1.2\"><span data-text=\"true\">Track 03</span></span></div>",
+                          "left": null,
+                          "right": null,
+                          "top": null,
+                          "bottom": null,
+                          "width": 197,
+                          "height": 54,
+                          "aspectRatio": null,
+                          "centerX": "50.26315789473684%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        }
+                      },
+                      {
+                        "componentClass": "Frame",
+                        "props": {
+                          "key": "gxmEJic8g",
+                          "id": "id_gxmEJic8g",
+                          "willChangeTransform": false,
+                          "opacity": 1,
+                          "radius": 0,
+                          "rotation": 0,
+                          "visible": true,
+                          "overflow": "visible",
+                          "background": {
+                            "r": 255,
+                            "g": 255,
+                            "b": 255,
+                            "a": 1,
+                            "h": 0,
+                            "s": 0,
+                            "l": 1,
+                            "initialValue": "#FFFFFF",
+                            "roundA": 1,
+                            "format": "rgb"
+                          },
+                          "shadows": [],
+                          "left": null,
+                          "right": null,
+                          "top": 0,
+                          "bottom": null,
+                          "width": 200,
+                          "height": 54,
+                          "aspectRatio": null,
+                          "centerX": "50%",
+                          "centerY": "50%",
+                          "parentSize": null
+                        },
+                        "children": [],
+                        "codeOverrideIdentifier": "./App.tsx_TitleOverlay03"
+                      }
+                    ]
+                  }
+                ],
+                "codeOverrideIdentifier": "./App.tsx_NoseWrap03"
+              }
+            ],
+            "codeOverrideIdentifier": "./App.tsx_Pages"
+          }
+        ],
+        "codeOverrideIdentifier": "./App.tsx_Pages"
+      },
+      {
+        "componentClass": "ComponentContainer",
+        "props": {
+          "key": "IeGI0eNni",
+          "id": "id_IeGI0eNni",
+          "willChangeTransform": false,
+          "rotation": 0,
+          "opacity": 1,
+          "componentIdentifier": "@framer/kasimir.iphone-x-kit/./Status Bar/Status_Bar.tsx_StatusBar",
+          "background": null,
+          "visible": true,
+          "left": 0,
+          "right": 0,
+          "top": 0,
+          "bottom": null,
+          "width": 375,
+          "height": 44,
+          "aspectRatio": null,
+          "centerX": "50%",
+          "centerY": "2.70935960591133%",
+          "parentSize": null
+        },
+        "children": [
+          {
+            "componentClass": "@framer/kasimir.iphone-x-kit/./Status Bar/Status_Bar.tsx_StatusBar",
+            "props": {
+              "appearance": "dark",
+              "mode": "transparent",
+              "liveTime": true,
+              "twelveHour": true,
+              "time": "18.00",
+              "location": "none",
+              "back": "",
+              "signalLevel": 100,
+              "wifiLevel": 100,
+              "batteryLevel": 100,
+              "placeholders": null,
+              "id": "IeGI0eNni@framer/kasimir.iphone-x-kit/./Status Bar/Status_Bar.tsx_StatusBar",
+              "key": "IeGI0eNni@framer/kasimir.iphone-x-kit/./Status Bar/Status_Bar.tsx_StatusBar"
+            },
+            "children": []
+          }
+        ]
+      },
+      {
+        "componentClass": "Frame",
+        "props": {
+          "key": "mIw1iraNZ",
+          "id": "id_mIw1iraNZ",
+          "willChangeTransform": false,
+          "opacity": 1,
+          "radius": 0,
+          "rotation": 0,
+          "visible": true,
+          "overflow": "visible",
+          "background": {
+            "src": "Wvg8Xv8mW2K0tFJ6p2In4NvU9o.png",
+            "pixelWidth": 262,
+            "pixelHeight": 36,
+            "intrinsicWidth": 131,
+            "intrinsicHeight": 18,
+            "fit": "fill"
+          },
+          "shadows": [],
+          "dropShadows": [],
+          "left": null,
+          "right": null,
+          "top": null,
+          "bottom": 30,
+          "width": 131,
+          "height": 18,
+          "aspectRatio": 7.277777777777778,
+          "centerX": "50%",
+          "centerY": "95.19704433497537%",
+          "parentSize": null
+        },
+        "children": []
+      }
+    ]
+  },
+  "metadata": {
+    "name": "Apple iPhone XS",
+    "id": "pBYtmZRYw",
+    "width": 375,
+    "height": 812,
+    "settings": {
+      "deviceType": "framer/FramerAppleIPhoneXS",
+      "deviceDescriptor": {
+        "hands": {
+          "Hand 1": {
+            "package": "@framer/framer.device-hand-iphone-1",
+            "width": 3567,
+            "height": 5558,
+            "offset": -15
+          },
+          "Hand 2": {
+            "package": "@framer/framer.device-hand-iphone-2",
+            "width": 3567,
+            "height": 5558,
+            "offset": -15
+          }
+        },
+        "pixelRatio": 3,
+        "canRotate": true,
+        "screen": {
+          "width": 1125,
+          "height": 2436
+        },
+        "kind": "phone",
+        "skins": {
+          "Space Gray": {
+            "package": "@framer/framer.device-skin-apple-iphone-xs-spacegrey"
+          },
+          "Silver": {
+            "package": "@framer/framer.device-skin-apple-iphone-xs-silver"
+          },
+          "Gold": {
+            "package": "@framer/framer.device-skin-apple-iphone-xs-gold"
+          }
+        },
+        "title": "Framer Bezel Apple iPhone XS",
+        "category": "Framer Bezel",
+        "selector": "Apple iPhone XS"
+      },
+      "zoom": -1,
+      "rotate": false,
+      "bezel": false,
+      "responsive": false,
+      "touch": true,
+      "__class": "PreviewSettings"
+    }
+  },
+  "navigation": {}
+};
+	const $build_index_js = document.querySelector("#build_index_js")
+	const script = $build_index_js ? $build_index_js.textContent.trim() : ""
+	
+	// need react to have rendered, before we can do setPreviewData
+	setTimeout(() => {
+	    if (script.length > 0) {
+	        setPreviewData(script, data)
+	    } else {
+	        fetch("build/index.js").then((response) => {
+	            return response.text().then((script) => {
+	                setPreviewData(script, data)
+	            })
+	        })
+	    }
+	}, 0)
+	</script>
+</body>
+
+</html>
