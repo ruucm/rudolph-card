@@ -60,7 +60,8 @@ const showNose1 = async () => {
 
   // animate title
   await sleep(800)
-  animate.ease(nose1.titleOverlayTop, -54, { duration: 0.6 })
+  await animate.ease(nose1.titleOverlayTop, -54, { duration: 0.6 }).finished
+  nose1.titleOverlayOpacity.set(0)
 
   // start snow!
   snow.snowOn = true

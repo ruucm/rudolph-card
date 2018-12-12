@@ -35,6 +35,7 @@ const trackNumTop = Animatable(0)
 const trackNumOpacity = Animatable(0)
 
 const titleOverlayTop = Animatable(0)
+const titleOverlayOpacity = Animatable(1)
 const titleTop = Animatable(0)
 const titleOpacity = Animatable(0)
 
@@ -60,6 +61,7 @@ export default {
   trackNumTop,
   trackNumOpacity,
   titleOverlayTop,
+  titleOverlayOpacity,
   titleTop,
   titleOpacity,
   authorTop,

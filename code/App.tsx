@@ -64,6 +64,7 @@ export const CoverImage01: Override = () => {
 export const TitleOverlay01: Override = () => {
   return {
     top: nose1.titleOverlayTop,
+    opacity: nose1.titleOverlayOpacity,
   }
 }
 export const Title01: Override = () => {
@@ -117,6 +118,7 @@ export const CoverImage02: Override = () => {
 export const TitleOverlay02: Override = () => {
   return {
     top: nose2.titleOverlayTop,
+    opacity: nose2.titleOverlayOpacity,
   }
 }
 export const Title02: Override = () => {
@@ -169,6 +171,7 @@ export const CoverImage03: Override = () => {
 export const TitleOverlay03: Override = () => {
   return {
     top: nose3.titleOverlayTop,
+    opacity: nose3.titleOverlayOpacity,
   }
 }
 export const Title03: Override = () => {

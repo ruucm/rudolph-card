@@ -44,7 +44,8 @@ const showNose3 = async () => {
 
   // animate title
   await sleep(800)
-  animate.ease(nose3.titleOverlayTop, -54, { duration: 0.6 })
+  await animate.ease(nose3.titleOverlayTop, -54, { duration: 0.6 }).finished
+  nose3.titleOverlayOpacity.set(0)
 }
 
 export default showNose3
